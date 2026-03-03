@@ -1,0 +1,10 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "charliec-skills",
+  "version": "1.0.0",
+  "description": "charliec personal Skills Marketplace",
+  "owner": {
+    "name": "charliec"
+  },
+  "plugins": []
+}
