@@ -19,8 +19,7 @@ Personal marketplace for managing Claude Code skills.
 │       │       └── references/ # Reference documents
 │       └── commands/
 │           └── <skill-name>.md # Slash command
-├── cli/                      # CLI tool (sm) for publish/update/list
-└── docs/plans/               # Design and implementation plans
+└── docs/                     # Documentation and design plans
 ```
 
 ## Version Management
@@ -29,7 +28,9 @@ Personal marketplace for managing Claude Code skills.
 - Marketplace version bumps PATCH on any plugin add/update
 - Three version sync points: git tag, plugin.json, marketplace.json
 
-## CLI Commands
+## CLI Tool
+
+The `sm` CLI tool lives in a separate repository: `../sm-cli/`
 
 ```bash
 sm init [--name <name>]       # Initialize new skill project
