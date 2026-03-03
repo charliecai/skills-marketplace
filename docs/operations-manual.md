@@ -26,6 +26,16 @@
 
 Skills Marketplace 是一个个人 Claude Code Skills 管理平台。每个 skill 独立开发、独立 git 仓库，marketplace 作为统一的注册中心，存储所有 skill 的文件快照和元数据。
 
+**项目采用双仓库架构：**
+- **skills-marketplace** — Marketplace 内容仓库，存储已发布 skill 的快照和注册表
+- **sm-cli** — CLI 工具仓库，`sm` 命令的源码和测试
+
+```
+/Users/charliec/Projects/skills-marketplace/
+├── skills-marketplace/     ← git repo: marketplace 内容
+└── sm-cli/                 ← git repo: CLI 工具
+```
+
 **核心理念：**
 - 每个 skill 有自己独立的 git 仓库，位于 `/Users/charliec/Projects/` 下
 - Marketplace 仓库存储所有已发布 skill 的文件副本（快照模式）
@@ -47,9 +57,12 @@ Skills Marketplace 是一个个人 Claude Code Skills 管理平台。每个 skil
 ### 2.2 安装 CLI
 
 ```bash
-cd /Users/charliec/Projects/skills-marketplace/cli
+cd /Users/charliec/Projects/skills-marketplace/sm-cli
 
-# 使用 UV 安装（开发模式）
+# 安装为全局 CLI 工具
+uv tool install --editable .
+
+# 或开发模式安装
 uv pip install -e .
 
 # 验证安装
@@ -66,7 +79,7 @@ CLI 使用 `~/.config/sm/config.json` 存储全局配置。首次运行任何命
 mkdir -p ~/.config/sm
 cat > ~/.config/sm/config.json << 'EOF'
 {
-  "marketplacePath": "/Users/charliec/Projects/skills-marketplace",
+  "marketplacePath": "/Users/charliec/Projects/skills-marketplace/skills-marketplace",
   "defaultAuthor": "charliec"
 }
 EOF
@@ -83,28 +96,30 @@ EOF
 
 ## 3. 项目结构
 
-### 3.1 Marketplace 仓库结构
+### 3.1 整体结构
 
 ```
-skills-marketplace/
-├── .claude-plugin/
-│   └── marketplace.json          # Marketplace 注册表（核心元数据）
-├── plugins/                      # 所有已发布 skill 的文件快照
-│   └── <skill-name>/
-│       ├── .claude-plugin/
-│       │   └── plugin.json       # Plugin 配置
-│       ├── skills/
-│       │   └── <skill-name>/
-│       │       ├── SKILL.md      # Skill 定义（必需）
-│       │       ├── scripts/      # 可执行脚本
-│       │       └── references/   # 参考文档
-│       └── commands/
-│           └── <skill-name>.md   # Slash 命令
-├── cli/                          # sm CLI 工具源码
-│   ├── pyproject.toml
-│   ├── src/sm/                   # 核心模块
-│   └── tests/                    # 测试套件
-└── docs/                         # 文档
+/Users/charliec/Projects/skills-marketplace/
+├── skills-marketplace/              ← git repo: marketplace 内容
+│   ├── .claude-plugin/
+│   │   └── marketplace.json         # Marketplace 注册表（核心元数据）
+│   ├── plugins/                     # 所有已发布 skill 的文件快照
+│   │   └── <skill-name>/
+│   │       ├── .claude-plugin/
+│   │       │   └── plugin.json      # Plugin 配置
+│   │       ├── skills/
+│   │       │   └── <skill-name>/
+│   │       │       ├── SKILL.md     # Skill 定义（必需）
+│   │       │       ├── scripts/     # 可执行脚本
+│   │       │       └── references/  # 参考文档
+│   │       └── commands/
+│   │           └── <skill-name>.md  # Slash 命令
+│   ├── docs/                        # 文档
+│   └── CLAUDE.md
+└── sm-cli/                          ← git repo: CLI 工具
+    ├── pyproject.toml
+    ├── src/sm/                      # 核心模块
+    └── tests/                       # 测试套件
 ```
 
 ### 3.2 独立 Skill 项目结构
@@ -382,7 +397,7 @@ sm publish --version 1.0.0
 # ✓ Published my-awesome-skill v1.0.0 to marketplace
 
 # Step 9: 提交 marketplace 变更
-cd ~/Projects/skills-marketplace
+cd ~/Projects/skills-marketplace/skills-marketplace
 git add .
 git commit -m "publish: my-awesome-skill v1.0.0"
 git push
@@ -404,7 +419,7 @@ sm update my-awesome-skill --version 1.1.0
 # ✓ Updated my-awesome-skill to v1.1.0
 
 # Step 4: 提交 marketplace 变更
-cd ~/Projects/skills-marketplace
+cd ~/Projects/skills-marketplace/skills-marketplace
 git add .
 git commit -m "update: my-awesome-skill v1.1.0"
 git push
@@ -638,7 +653,7 @@ sm status
 ### 11.1 开发环境搭建
 
 ```bash
-cd /Users/charliec/Projects/skills-marketplace/cli
+cd /Users/charliec/Projects/skills-marketplace/sm-cli
 
 # 安装开发依赖
 uv sync --group dev
@@ -650,7 +665,7 @@ uv pip install -e .
 ### 11.2 运行测试
 
 ```bash
-cd /Users/charliec/Projects/skills-marketplace/cli
+cd /Users/charliec/Projects/skills-marketplace/sm-cli
 
 # 运行全部测试
 uv run pytest -v
@@ -678,7 +693,7 @@ uv run pytest tests/test_publish.py::test_publish_happy_path -v
 ### 11.4 项目源码结构
 
 ```
-cli/src/sm/
+src/sm/
 ├── __init__.py          # 包初始化
 ├── main.py              # Typer CLI 入口，定义所有命令
 ├── config.py            # ~/.config/sm/config.json 读写
