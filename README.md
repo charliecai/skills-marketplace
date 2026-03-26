@@ -12,7 +12,7 @@
 
 ```bash
 claude plugin marketplace add https://github.com/charliec/skills-marketplace
-claude plugin install charliec-skills
+claude plugin install {技能名称}
 ```
 
 ## License
