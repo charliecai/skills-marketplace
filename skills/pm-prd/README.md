@@ -31,7 +31,7 @@
 ### 方式一：通过 Charliec's Skills Marketplace 安装
 
 ```bash
-claude plugin marketplace add https://github.com/charliec/skills-marketplace
+claude plugin marketplace add https://github.com/charliecai/skills-marketplace
 claude plugin install pm-prd
 ```
 按提示完成安装即可。

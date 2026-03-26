@@ -11,7 +11,7 @@
 ### Claude Code
 
 ```bash
-claude plugin marketplace add https://github.com/charliec/skills-marketplace
+claude plugin marketplace add https://github.com/charliecai/skills-marketplace
 claude plugin install {技能名称}
 ```
 
