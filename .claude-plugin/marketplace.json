@@ -1,7 +1,6 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "charliec-skills",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "charliec personal Skills Marketplace",
   "owner": {
     "name": "charliec"
@@ -10,16 +9,11 @@
     {
       "name": "pm-prd",
       "description": "产品经理 PRD 助手，专注于从模糊需求到可评审 PRD 和可交互 Demo 的全流程。五种工作模式：(1) 方案讨论 — 需求澄清、方案评估、功能设计；(2) PRD 创作 — 从零创作 PRD/MRD/BRD/用户故事；(3) PRD 修改 — 根据反馈修改已有 PRD，支持`{{{...}}}`标记批量标注修改点；(4) 文档评审 — 评审产品文档；(5) 演示 Demo — 基于 PRD 生成可交互 HTML 原型演示页面，含截图回填和 PRD↔Demo 双向同步。触发词包括\"帮我写PRD\"\"评审文档\"\"分析需求\"\"方案评估\"\"生成demo\"\"做个demo\"\"生成演示\"\"原型演示\"\"交互原型\"\"演示页面\"\"修改demo\"\"更新demo\"等。",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "source": "./",
       "skills": [
         "./skills/pm-prd"
       ],
-      "_meta": {
-        "sourceRepo": "/Users/charliec/Projects/pm-prd",
-        "gitCommitSha": "7b0911ee5985a6c4116435b1165137c04010db31",
-        "publishedAt": "2026-03-26T14:06:46.766909+00:00"
-      },
       "author": {
         "name": "charliec"
       }
