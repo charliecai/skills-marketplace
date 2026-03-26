@@ -1,10 +1,22 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "charliec-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "charliec personal Skills Marketplace",
   "owner": {
     "name": "charliec"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "pulse",
+      "description": "Unified Year-Month-Week-Day PDCA life management system with work and life domains.\nIntegrates goal management, self-reflection, and continuous improvement in Obsidian vault.\nUse for: daily planning, daily review, weekly planning, weekly review, monthly planning,\nmonthly review, annual planning, annual review, quick records, PDCA, life wheel assessment.\nSupports inline directives in files using {{{directive}}} syntax \u2014 detected and executed during reviews.\nTriggers: pulse daily, pulse weekly, pulse monthly, pulse annual, pulse record, pulse init,\npulse daily-review, pulse daily-plan, pulse weekly-review, pulse weekly-plan,\npulse monthly-review, pulse monthly-plan, pulse annual-review, pulse annual-plan,\npulse status, \u65e5\u8ba1\u5212, \u5468\u8ba1\u5212, \u6708\u8ba1\u5212, \u5e74\u5ea6\u8ba1\u5212, \u65e5\u56de\u987e, \u5468\u56de\u987e, \u6708\u5ea6\u56de\u987e, \u5e74\u5ea6\u56de\u987e, \u65e5\u62a5, \u5e74\u5ea6, \u8bb0\u5f55, PDCA\n",
+      "version": "0.1.0",
+      "source": "./plugins/pulse",
+      "_meta": {
+        "sourceRepo": "/Users/charliec/Projects/Pulse/pulse",
+        "gitCommitSha": "6b874aac5ebb0e11374d1dab288b4326c109d437",
+        "publishedAt": "2026-03-04T12:10:10.798242+00:00"
+      }
+    }
+  ]
 }
