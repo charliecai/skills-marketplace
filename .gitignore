@@ -9,3 +9,4 @@ build/
 .claude/
 .claude-plugins/
 CLAUDE.md
+.claude-plugin/meta.json
