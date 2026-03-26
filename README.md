@@ -15,12 +15,6 @@ claude plugin marketplace add https://github.com/charliec/skills-marketplace
 claude plugin install charliec-skills
 ```
 
-### 手动安装
-
-```bash
-git clone https://github.com/charliec/skills-marketplace.git ~/.claude/charliec-skills
-```
-
 ## License
 
-MIT
+MIT License
