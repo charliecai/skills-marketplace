@@ -21,22 +21,6 @@ claude plugin install charliec-skills
 git clone https://github.com/charliec/skills-marketplace.git ~/.claude/charliec-skills
 ```
 
-在 Claude Code 设置中将 skills 路径指向 `~/.claude/charliec-skills/skills/`。
-
-## 项目结构
-
-```
-skills-marketplace/
-├── .claude-plugin/
-│   └── marketplace.json          # 注册表
-└── skills/                       # 所有已发布的 skill（扁平结构）
-    └── <skill-name>/
-        ├── SKILL.md              # Skill 定义（必需）
-        ├── scripts/              # 可执行脚本（可选）
-        ├── references/           # 参考文档（可选）
-        └── ...
-```
-
 ## License
 
 MIT
