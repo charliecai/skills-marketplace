@@ -1,21 +1,21 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "charliec-skills",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "charliec personal Skills Marketplace",
   "owner": {
     "name": "charliec"
   },
   "plugins": [
     {
-      "name": "pulse",
-      "description": "Unified Year-Month-Week-Day PDCA life management system with work and life domains.\nIntegrates goal management, self-reflection, and continuous improvement in Obsidian vault.\nUse for: daily planning, daily review, weekly planning, weekly review, monthly planning,\nmonthly review, annual planning, annual review, quick records, PDCA, life wheel assessment.\nSupports inline directives in files using {{{directive}}} syntax \u2014 detected and executed during reviews.\nTriggers: pulse daily, pulse weekly, pulse monthly, pulse annual, pulse record, pulse init,\npulse daily-review, pulse daily-plan, pulse weekly-review, pulse weekly-plan,\npulse monthly-review, pulse monthly-plan, pulse annual-review, pulse annual-plan,\npulse status, \u65e5\u8ba1\u5212, \u5468\u8ba1\u5212, \u6708\u8ba1\u5212, \u5e74\u5ea6\u8ba1\u5212, \u65e5\u56de\u987e, \u5468\u56de\u987e, \u6708\u5ea6\u56de\u987e, \u5e74\u5ea6\u56de\u987e, \u65e5\u62a5, \u5e74\u5ea6, \u8bb0\u5f55, PDCA\n",
+      "name": "pm-prd",
+      "description": "产品经理 PRD 助手，专注于从模糊需求到可评审 PRD 和可交互 Demo 的全流程。五种工作模式：(1) 方案讨论 — 需求澄清、方案评估、功能设计；(2) PRD 创作 — 从零创作 PRD/MRD/BRD/用户故事；(3) PRD 修改 — 根据反馈修改已有 PRD，支持`{{{...}}}`标记批量标注修改点；(4) 文档评审 — 评审产品文档；(5) 演示 Demo — 基于 PRD 生成可交互 HTML 原型演示页面，含截图回填和 PRD↔Demo 双向同步。触发词包括\"帮我写PRD\"\"评审文档\"\"分析需求\"\"方案评估\"\"生成demo\"\"做个demo\"\"生成演示\"\"原型演示\"\"交互原型\"\"演示页面\"\"修改demo\"\"更新demo\"等。",
       "version": "0.1.0",
-      "source": "./plugins/pulse",
+      "source": "./skills/pm-prd",
       "_meta": {
-        "sourceRepo": "/Users/charliec/Projects/Pulse/pulse",
-        "gitCommitSha": "6b874aac5ebb0e11374d1dab288b4326c109d437",
-        "publishedAt": "2026-03-04T12:10:10.798242+00:00"
+        "sourceRepo": "/Users/charliec/Projects/pm-prd",
+        "gitCommitSha": "7c8ad7507666a44554e681100be31e945008889f",
+        "publishedAt": "2026-03-26T13:28:11.402428+00:00"
       }
     }
   ]
